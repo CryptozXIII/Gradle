@@ -59,5 +59,19 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("should display error after calculating the percentages")
+    void testPercentage() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(100);
+        calc.pressUnaryOperationKey("%");
+
+        String expected = "1";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
 }
 
